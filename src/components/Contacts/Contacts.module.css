@@ -1,0 +1,19 @@
+.contacts__item {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts__name {
+  font-weight: 600;
+}
+
+.contacts__number {
+  text-align: center;
+  margin-top: 16px;
+}
+.contacts__btn {
+  margin-top: 16px;
+  height: min-content;
+  border-radius: 10px;
+}

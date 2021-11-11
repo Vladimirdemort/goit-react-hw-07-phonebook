@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-
+import styles from './InputArea.module.css'
 
 // export default  function InputArea({name, writeContact, contactSubmit}) {
 // return(
@@ -38,7 +38,7 @@ class InputArea extends React.Component {
   writeContact = event => {
       const {name,value} = event.target
 this.setState(
-  {[name]:[value]}
+  {[name]:value}
 )
   }
 
@@ -50,9 +50,10 @@ this.setState(
 
 
     render() { 
-        return <form onSubmit={this.contactSubmit}>
+        return <form className={styles.inputForm} onSubmit={this.contactSubmit}>
         <label> Name
             <input
+            className={styles.inputArea}
             type="text"
             name="name"
             value={this.state.name}
@@ -65,6 +66,7 @@ this.setState(
         </label>
         <label> Number
             <input
+                className={styles.inputArea}
                 type="tel"
                 name="number"
                 value={this.state.number}

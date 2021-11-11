@@ -27,13 +27,13 @@ class Filter extends React.Component {
     render() { 
         return <div>
                 <label> Find contact by name
-                <input
-                type="text"
-                name="filter"
-                value ={this.filterValue}
-                onChange={this.filterList}/>
-            </label>
-        </div>;
+                    <input
+                    type="text"
+                    name="filter"
+                    value ={this.filterValue}
+                    onChange={this.filterList}/>
+                </label>
+             </div>;
     }
 }
  

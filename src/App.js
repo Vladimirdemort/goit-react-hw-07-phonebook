@@ -23,6 +23,12 @@ class App extends React.Component {
 
 
   formSubmit = data => {
+   const friendName = data.name
+   if(this.state.contacts.some(({name}) => name === friendName)) {
+    alert(`${friendName} is already in contacts`) 
+    return
+   }
+
     data.id = uuidv4();
     const setContact = this.state.contacts
 
@@ -31,6 +37,8 @@ class App extends React.Component {
     this.setState({
       contacts: setContact
     })
+
+
   }
 
   nameFilter = e => {
@@ -43,14 +51,21 @@ class App extends React.Component {
     const {contacts, filter} = this.state;
     const toLowerCaseFilter = filter.toLowerCase();
 
-    return contacts.filter( (contact) => {
-     return  contact.name.toLowerCase().includes(toLowerCaseFilter)
+    return contacts.filter( contact => {
+     return contact.name.toLowerCase().includes(toLowerCaseFilter)
     })
+  }
+  
+  deleteItem = e => {
+    console.log(e)
+    this.setState((prev) => ({
+      contacts: prev.contacts.filter((contact) => contact.id !== e),
+    }));
   }
 
   render() {
     const filterSearch = this.filteredList();
-    console.log(filterSearch)
+    
   return (
     <>
     <Section title={'Phonebok'}>
@@ -58,7 +73,7 @@ class App extends React.Component {
     </Section>
     <Section title={"Contacts"}>
       <Filter filter={this.nameFilter} filterValue={this.state.filter}/>
-    <Contacts contactData={filterSearch} />
+    <Contacts contactData={filterSearch} onContactDelete={this.deleteItem}/>
     </Section>
     </>
     )
