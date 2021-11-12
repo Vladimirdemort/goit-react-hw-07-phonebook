@@ -1,40 +1,28 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-// export default function Filter ({filter}) {
-    
-//     return (
-//         <form>
-//             <label>
-//                 <input
-//                 type="text"
-//                 name="filter"
-//                 value={''}
-//                 onChange={filter}/>
-//             </label>
-//         </form>
-//     )
-// }
-
-
-class Filter extends React.Component {
-
-
-   filterList = e => {
-
-    this.props.filter(e.target)
-   }
-
-    render() { 
-        return <div>
-                <label> Find contact by name
-                    <input
-                    type="text"
-                    name="filter"
-                    value ={this.filterValue}
-                    onChange={this.filterList}/>
-                </label>
-             </div>;
-    }
+function Filter({ filterValue, filter }) {
+  return (
+    <div>
+      <label>
+        {' '}
+        Find contact by name
+        <input
+          type="text"
+          name="filter"
+          value={filterValue}
+          onChange={e => {
+            filter(e.target);
+          }}
+        />
+      </label>
+    </div>
+  );
 }
- 
+
 export default Filter;
+
+Filter.propTypes = {
+  filterValue: PropTypes.string,
+  filter: PropTypes.func,
+};
