@@ -1,5 +1,5 @@
 {
-  "name": "goit-react-hw-02-phonebook",
+  "name": "goit-react-hw-03-phonebook",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -29,13 +29,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vladimirdemort/goit-react-hw-02-phonebook"
+    "url": "git+https://github.com/Vladimirdemort/goit-react-hw-03-phonebook"
   },
   "author": "Dvorskyi Volodymyr",
   "bugs": {
-    "url": "https://github.com/Vladimirdemort/goit-react-hw-02-phonebook/issues"
+    "url": "https://github.com/Vladimirdemort/goit-react-hw-03-phonebook/issues"
   },
-  "homepage": "https://Vladimirdemort.github.io/goit-react-hw-02-phonebook",
+  "homepage": "https://Vladimirdemort.github.io/goit-react-hw-03-phonebook",
   "eslintConfig": {
     "extends": [
       "react-app",
