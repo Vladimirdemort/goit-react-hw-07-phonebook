@@ -27,8 +27,3 @@ function Filter() {
 }
 
 export default Filter;
-
-Filter.propTypes = {
-  filterValue: PropTypes.string,
-  filter: PropTypes.func,
-};
