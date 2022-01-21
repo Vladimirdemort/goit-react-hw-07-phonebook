@@ -5,15 +5,14 @@ import styles from './InputArea.module.css';
 import PropTypes from 'prop-types';
 
 function InputArea({ onSubmit }) {
-  
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
 
   const contactSubmit = e => {
     e.preventDefault();
     const objName = {
       name,
-      number,
+      phone,
     };
     onSubmit(objName);
 
@@ -29,8 +28,8 @@ function InputArea({ onSubmit }) {
       case 'name':
         setName(value);
         break;
-      case 'number':
-        setNumber(value);
+      case 'phone':
+        setPhone(value);
         break;
       default:
         break;
@@ -38,7 +37,7 @@ function InputArea({ onSubmit }) {
   };
 
   const reset = () => {
-    setNumber('');
+    setPhone('');
     setName('');
   };
 
@@ -60,12 +59,12 @@ function InputArea({ onSubmit }) {
       </label>
       <label>
         {' '}
-        Number
+        phone
         <input
           className={styles.inputArea}
           type="tel"
-          name="number"
-          value={number}
+          name="phone"
+          value={phone}
           onChange={writeContact}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"

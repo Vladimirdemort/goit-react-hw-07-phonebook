@@ -8,7 +8,7 @@ export default function Contacts({ contactData, onContactDelete }) {
       {contactData.map(contact => (
         <li className={styles.contacts__item} key={contact.id}>
           <p className={styles.contacts__name}>{contact.name}</p>
-          <span className={styles.contacts__number}>{contact.number}</span>
+          <span className={styles.contacts__number}>{contact.phone}</span>
           <button
             className={styles.contacts__btn}
             type="button"
